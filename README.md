@@ -1,0 +1,2 @@
+This is a simple website for calculating surgery-related times. You input the date and time that the surgery is scheduled for, and it gives you all the times that you will need to inform patients' guardians of. Some examples of these are the solid food cut-off time, liquid cut-off time, and arrival time.
+This is to be used by SCH for Children's Mercy.
