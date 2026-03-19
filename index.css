@@ -1,0 +1,19 @@
+* {
+    text-align: center;
+}
+body {
+    background-color: rgb(167, 223, 241);
+    margin: 0;
+}
+.westonsBlueBox {
+    border: 1px solid blue;
+    background-color: aqua;
+    min-height: 50px;
+    font-size: 2rem;
+}
+#output {
+  white-space: pre-line;
+}
+li {
+    text-align: left;
+}
