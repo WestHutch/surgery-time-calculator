@@ -67,11 +67,20 @@
                                 <option value="150">2.5 hours</option>
                             </select>
                         </div>
-                        
 
                         <div class="mb-3">
                             <label class="form-check-label" for="infant-check">Infant?</label>
                             <input type="checkbox" class="form-check-input" id="infant-check">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-check-label" for="breastfeed-check">Breastfeeding?</label>
+                            <input type="checkbox" class="form-check-input" id="breastfeed-check">
+                        </div>
+                        
+                        <div class="mb-3" id="surgeon-time-div">
+                            <label for="surgeon-time">Surgeon block time:</label>
+                            <input type="text" class="form-control" placeholder="HH:MM" id="surgeon-time" name="surgeon-time" />
                         </div>
                         
                         <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
