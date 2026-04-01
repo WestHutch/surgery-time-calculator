@@ -115,7 +115,7 @@ submitBtn.addEventListener("click", (event) => {
     if (isBreastfeeding) {
         rows += `
         <tr>
-        <th>Stop Breastmilk</th>
+        <th>Stop Breast milk</th>
         <td>${dateToString(stopBreastmilkDateObj)}</td>
         </tr>
         `;
