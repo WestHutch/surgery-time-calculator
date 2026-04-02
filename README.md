@@ -13,7 +13,7 @@ This is a simple website for nurses to calculate the times needed to give to par
 ### 🖥️ Desktop
 
 <p align="center">
-  <img src="./screenshots/desktop.png" alt="Desktop Screenshot" width="660px" />
+  <img src="./screenshots/desktop.png" alt="Desktop Screenshot"/>
 </p>
 
 ### 📱 Mobile
