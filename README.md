@@ -8,6 +8,20 @@
 
 This is a simple website for nurses to calculate the times needed to give to parents/guardians of patients. You input the date and time that the surgery is scheduled for, plus some optional fields, and it gives you all the times that you will need to give. Some examples of these are the solid food cutoff time, clear liquid cutoff time, and arrival time.
 
+## Screenshots
+
+### 🖥️ Desktop
+
+<p align="center">
+  <img src="./screenshots/desktop.png" alt="Desktop Screenshot" width="660px" />
+</p>
+
+### 📱 Mobile
+
+<p align="center">
+  <img src="./screenshots/mobile.png" alt="Mobile Screenshot" height="660px" />
+</p>
+
 ## Demo
 
 You can try the website here:
