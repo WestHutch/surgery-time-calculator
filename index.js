@@ -77,20 +77,35 @@ submitBtn.addEventListener("click", (event) => {
         surgeonDateObj = getTimeInput(surgeonTime);
     }
 
-    let arrivalDateObj = new Date(appointmentDateObj.getTime() - arrivalMili); //usually 1 hr 15 minutes
+    let arrivalDateObj = new Date(appointmentDateObj.getTime() - arrivalMili); //usually 1 hr 30 minutes
     let stopClearLiquidsDateObj = new Date(arrivalDateObj.getTime() - 7200000); //2 hrs
     let stopSolidsDateObj;
     let stopBreastmilkDateObj;
     
     if (isInfant) {
-        stopSolidsDateObj = new Date(arrivalDateObj.getTime() - 23400000); //6.5 hrs
         stopBreastmilkDateObj = new Date(arrivalDateObj.getTime() - 16200000); //4.5 hr
         breastfeedCheck.checked = true;
+        if (arrivalDateObj.getHours() < 7 || (arrivalDateObj.getHours() < 8 && arrivalDateObj.getMinutes() < 30)) {
+            stopSolidsDateObj = new Date(arrivalDateObj.getTime());
+            stopSolidsDateObj.setMinutes(0);
+            stopSolidsDateObj.setHours(1);
+        }
+        else {
+            stopSolidsDateObj = new Date(arrivalDateObj.getTime() - 23400000); //6.5 hrs
+        }
     }
     else {
-        stopSolidsDateObj = new Date(surgeonDateObj.getTime() - 23400000); //6.5 hrs
         stopBreastmilkDateObj = new Date(surgeonDateObj.getTime() - 16200000); //4.5 hr
+        if (surgeonDateObj.getHours() < 7 || (surgeonDateObj.getHours() < 8 && surgeonDateObj.getMinutes() < 30)) {
+            stopSolidsDateObj = new Date(surgeonDateObj.getTime());
+            stopSolidsDateObj.setMinutes(0);
+            stopSolidsDateObj.setHours(1);
+        }
+        else {
+            stopSolidsDateObj = new Date(surgeonDateObj.getTime() - 23400000); //6.5 hrs
+        }
     }
+
     isBreastfeeding = breastfeedCheck.checked;
     
     let rows = `

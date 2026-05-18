@@ -18,20 +18,6 @@
                 <div class="col-lg-4 col-0 rounded info bg-body order-2 order-lg-1" style="height: 100%;">
                     <h3 class="border-bottom border-dark" data-bs-toggle="collapse" data-bs-target="#downtown-collapsible" aria-expanded="false" style="cursor:pointer;">Downtown Considerations</h3>
                     <div id="downtown-collapsible" class="collapse">
-                        <h5 class="text-decoration-underline">1.5 Hour</h5>
-                        <ul>
-                            <li>Interpreter needs</li>
-                            <li>All ENT cases (provider request)</li>
-                            <li>Trach patients (regardless of type of surgery)</li>
-                            <li>Spinal fusions</li>
-                            <li>Need for IV start in SDS (due to adult patient, pre-op vancomycin, pre-op DDAVP, pre-op labs, ESRD pt with preop/postop labs, etc.)</li>
-                            <li>Eye patients who need dilating drops</li>
-                            <li>Sets of siblings</li>
-                            <li>Combo cases</li>
-                            <li>Sensory patients with medication plan (ex: PO precedex)</li>
-                            <li>Port accessed by SDS RN</li>
-                            <li>Anesthesia APRN completing H&P on DOS</li>
-                        </ul>
                         <h5 class="text-decoration-underline">2 hour</h5>
                         <ul>
                             <li>Lap sleeve gastrectomy procedures</li>
@@ -61,8 +47,7 @@
                             <label for="arrival-time">Select arrival time:</label>
                             <select class="form-select" id="arrival-time" name="arrival-time">
                                 <option value="60">1 hour</option>
-                                <option value="75" selected>1 hour 15 minutes</option>
-                                <option value="90">1.5 hours</option>
+                                <option value="90" selected>1.5 hours</option>
                                 <option value="120">2 hours</option>
                                 <option value="150">2.5 hours</option>
                             </select>
@@ -96,8 +81,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col">
+            <div class="row justify-content-center">
+                <div class="col col-12 col-lg-6">
                     <p id="output"></p>
                 </div>
             </div>
