@@ -81,9 +81,9 @@ submitBtn.addEventListener("click", (event) => {
     let stopClearLiquidsDateObj = new Date(arrivalDateObj.getTime() - 7200000); //2 hrs
     let stopSolidsDateObj;
     let stopBreastmilkDateObj;
-    
+    stopBreastmilkDateObj = new Date(arrivalDateObj.getTime() - 16200000); //4.5 hr
+
     if (isInfant) {
-        stopBreastmilkDateObj = new Date(arrivalDateObj.getTime() - 16200000); //4.5 hr
         breastfeedCheck.checked = true;
         if (arrivalDateObj.getHours() < 7 || (arrivalDateObj.getHours() < 8 && arrivalDateObj.getMinutes() < 30)) {
             stopSolidsDateObj = new Date(arrivalDateObj.getTime());
@@ -95,7 +95,6 @@ submitBtn.addEventListener("click", (event) => {
         }
     }
     else {
-        stopBreastmilkDateObj = new Date(surgeonDateObj.getTime() - 16200000); //4.5 hr
         if (surgeonDateObj.getHours() < 7 || (surgeonDateObj.getHours() < 8 && surgeonDateObj.getMinutes() < 30)) {
             stopSolidsDateObj = new Date(surgeonDateObj.getTime());
             stopSolidsDateObj.setMinutes(0);
