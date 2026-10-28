@@ -3,15 +3,12 @@ let output = document.getElementById("output");
 let appointmentTime = document.getElementById("appointment-time");
 let appointmentDate = document.getElementById("appointment-date");
 let arrivalTime = document.getElementById("arrival-time");
-let infantCheck = document.getElementById("infant-check");
 let surgeonTimeDiv = document.getElementById("surgeon-time-div");
-let isInfant = false;
 let surgeonTime = document.getElementById("surgeon-time");
 let breastfeedCheck = document.getElementById("breastfeed-check");
 let isBreastfeeding = false;
 let appointmentDateObj;
 
-//FIX BREASTFEEDING CHECK BOX WORK
 
 function getTimeInput(TimeEl) {
     let timeValue = TimeEl.value.trim();
@@ -46,19 +43,6 @@ function roundDownTo15(number) {
   return Math.floor(number / 15) * 15;
 }
 
-
-infantCheck.addEventListener("click", () => {
-    isInfant = infantCheck.checked;
-    if (isInfant) {
-        surgeonTimeDiv.style.display = "none";
-        breastfeedCheck.checked = true;
-    }
-    else {
-        surgeonTimeDiv.style.display = "block";
-        breastfeedCheck.checked = false;
-    }
-})
-
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault(); // stop form from refreshing the page
 
@@ -72,10 +56,7 @@ submitBtn.addEventListener("click", (event) => {
     //1 min = 60000 mili
     let arrivalMili = arrivalTime.value * 60000;
 
-    isInfant = infantCheck.checked;
-    if (isInfant == false) {
-        surgeonDateObj = getTimeInput(surgeonTime);
-    }
+    surgeonDateObj = getTimeInput(surgeonTime);
 
     let arrivalDateObj = new Date(appointmentDateObj.getTime() - arrivalMili); //usually 1 hr 30 minutes
     let stopClearLiquidsDateObj = new Date(arrivalDateObj.getTime() - 7200000); //2 hrs
@@ -83,26 +64,13 @@ submitBtn.addEventListener("click", (event) => {
     let stopBreastmilkDateObj;
     stopBreastmilkDateObj = new Date(arrivalDateObj.getTime() - 16200000); //4.5 hr
 
-    if (isInfant) {
-        breastfeedCheck.checked = true;
-        if (arrivalDateObj.getHours() < 7 || (arrivalDateObj.getHours() < 8 && arrivalDateObj.getMinutes() < 30)) {
-            stopSolidsDateObj = new Date(arrivalDateObj.getTime());
-            stopSolidsDateObj.setMinutes(0);
-            stopSolidsDateObj.setHours(1);
-        }
-        else {
-            stopSolidsDateObj = new Date(arrivalDateObj.getTime() - 23400000); //6.5 hrs
-        }
+    if (surgeonDateObj.getHours() < 7 || (surgeonDateObj.getHours() < 8 && surgeonDateObj.getMinutes() < 30)) {
+        stopSolidsDateObj = new Date(surgeonDateObj.getTime());
+        stopSolidsDateObj.setMinutes(0);
+        stopSolidsDateObj.setHours(1);
     }
     else {
-        if (surgeonDateObj.getHours() < 7 || (surgeonDateObj.getHours() < 8 && surgeonDateObj.getMinutes() < 30)) {
-            stopSolidsDateObj = new Date(surgeonDateObj.getTime());
-            stopSolidsDateObj.setMinutes(0);
-            stopSolidsDateObj.setHours(1);
-        }
-        else {
-            stopSolidsDateObj = new Date(surgeonDateObj.getTime() - 23400000); //6.5 hrs
-        }
+        stopSolidsDateObj = new Date(surgeonDateObj.getTime() - 23400000); //6.5 hrs
     }
 
     isBreastfeeding = breastfeedCheck.checked;

@@ -51,10 +51,10 @@ https://surgery-time-calculator.netlify.app/
 ## Logic
 
   * Surgery time is rounded down to nearest 15 minute interval
-  * If "Infant?" is checked, breastfeeding is automatically checked and surgeon block time is hidden, as it is not needed
+  * If "Infant?" is checked, breastfeeding is automatically checked
   * Arrival time is based on their surgery start time and the arrival offset
   * Clear liquid cutoff time is 2 hours prior to arrival time
-  * Solid cutoff time is 6.5 hours prior to arrival (infant) or 6.5 hours prior to surgeon block time (non-infant)
+  * Solid cutoff time is 6.5 hours prior to surgeon block time
   * Breastmilk cutoff time is 4.5 hours prior to arrival
   * Solid cutoff time minimum is 0100
 
