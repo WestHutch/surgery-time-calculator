@@ -33,8 +33,8 @@ https://surgery-time-calculator.netlify.app/
 
   * Surgery date & time (as HHMM or HH:MM (24 hour time))
   * Arrival offset (1 hour 30 minutes by default)
-  * Optional infant & breastfeeding checkboxes
-  * Surgeon block time (disabled if infant)
+  * Optional breastfeeding checkbox
+  * Surgeon block time
 
 ### Outputs
 
@@ -51,7 +51,6 @@ https://surgery-time-calculator.netlify.app/
 ## Logic
 
   * Surgery time is rounded down to nearest 15 minute interval
-  * If "Infant?" is checked, breastfeeding is automatically checked
   * Arrival time is based on their surgery start time and the arrival offset
   * Clear liquid cutoff time is 2 hours prior to arrival time
   * Solid cutoff time is 6.5 hours prior to surgeon block time
